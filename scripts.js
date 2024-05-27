@@ -28,13 +28,14 @@ function initMap() {
 }
 
 function geocode(address) {
-    return fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${address}`)
+    const encodedAddress = encodeURIComponent(address);
+    return fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodedAddress}`)
         .then(response => response.json())
         .then(data => {
             if (data && data.length > 0) {
                 return [data[0].lat, data[0].lon];
             } else {
-                throw new Error("Address not found");
+                throw new Error(`Address not found: ${address}`);
             }
         });
 }
@@ -61,6 +62,7 @@ function calculateRoute() {
             })
             .catch(error => {
                 alert("Error: " + error.message);
+                console.error(error);
             });
     } else {
         alert("Please enter both origin and destination.");
