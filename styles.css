@@ -1,0 +1,44 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #3b5998;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+main {
+    display: flex;
+    height: calc(100% - 60px); /* Adjust based on header height */
+}
+
+#map {
+    flex: 2;
+    height: 100%;
+}
+
+#controls {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#controls input, #controls button {
+    margin: 5px 0;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #3b5998;
+    color: white;
+    border: none;
+    cursor: pointer;
+}

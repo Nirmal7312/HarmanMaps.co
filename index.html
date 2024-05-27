@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HarmanMaps</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.js"></script>
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>HarmanMaps</h1>
+    </header>
+    <main>
+        <div id="map"></div>
+        <div id="controls">
+            <input id="origin" type="text" placeholder="Enter starting point">
+            <input id="destination" type="text" placeholder="Enter destination">
+            <button onclick="calculateRoute()">Get Directions</button>
+        </div>
+    </main>
+</body>
+</html>
